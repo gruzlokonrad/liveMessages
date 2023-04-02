@@ -13,11 +13,14 @@ app.use(cors());
 // Serve static files from the React app
 // app.use(express.static(path.join(__dirname, '/client/build')));
 app.use(express.static(path.join(__dirname, '/client/public')))
-
 // app.use('/api', testimonialsRoute)
+
+const message = []
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/index.html'));
 });
+
 // app.use((req, res) => {
 //   res.status(404).send({ message: "Not found ..." })
 // })
